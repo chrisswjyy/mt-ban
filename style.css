@@ -1,0 +1,298 @@
+/* CSS untuk Promote Generator */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 2em;
+    color: #4a5568;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+header p {
+    color: #718096;
+    font-size: 0.95em;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Input Section - 3 Kolom */
+.input-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column label {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.column input,
+.column select {
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1em;
+    background: #f7fafc;
+    transition: all 0.3s ease;
+    color: #4a5568;
+}
+
+.column input:focus,
+.column select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Button Styles */
+.generate-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Result Section */
+.result-section {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.result-section h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.generated-text {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #2d3748;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.copy-btn {
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #38a169;
+    transform: translateY(-1px);
+}
+
+/* Error Section */
+.error-section {
+    background: #fed7d7;
+    border: 2px solid #fc8181;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.error-section p {
+    color: #c53030;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* Responsive untuk Android Portrait (360-414px) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .input-section {
+        gap: 15px;
+    }
+    
+    .column input,
+    .column select {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .generate-btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
+
+/* Responsive untuk Android Landscape (600-900px) */
+@media screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+    .container {
+        max-width: 85%;
+        padding: 20px;
+    }
+    
+    .input-section {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+    
+    header h1 {
+        font-size: 2.2em;
+    }
+    
+    main {
+        padding: 30px;
+    }
+}
+
+/* Responsive untuk Tablet/Desktop */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 800px;
+        padding: 25px;
+    }
+    
+    .input-section {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+    
+    header {
+        padding: 25px;
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+    }
+    
+    main {
+        padding: 35px;
+    }
+}

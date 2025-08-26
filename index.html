@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Generator by chriss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mt Generator</h1>
+            <p>Metode Generator untuk Promosi Metode banned judi</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="column">
+                    <label for="website">Website judi yang ingin dipromosikan:</label>
+                    <input type="url" id="website" placeholder="https://example.com" required>
+                </div>
+
+                <div class="column">
+                    <label for="language">Pilih Bahasa ngntd</label>
+                    <select id="language" required>
+                        <option value="">-- Pilih Bahasa --</option>
+                        <option value="brazil">Brazil (Portugis)</option>
+                    </select>
+                </div>
+
+                <div class="column">
+                    <label for="promotor">Nama Owner Mt:</label>
+                    <input type="text" id="promotor" placeholder="Masukkan nama owner metode" required>
+                </div>
+
+                <div class="column">
+                    <label for="nomorPromotor">Nomor Target:</label>
+                    <input type="text" id="nomorPromotor" placeholder="Masukkan nomor target" required>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">
+                <span id="btnText">Buat Metode banned sekarang</span>
+                <div id="loading" class="loading hidden">Generating...</div>
+            </button>
+
+            <div id="result" class="result-section hidden">
+                <h3>Text Promosi Generated:</h3>
+                <div id="generatedText" class="generated-text"></div>
+                <button id="copyBtn" class="copy-btn">Copy Text</button>
+            </div>
+
+            <div id="error" class="error-section hidden">
+                <p id="errorText"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Mt Generator - Powered by Chris</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
